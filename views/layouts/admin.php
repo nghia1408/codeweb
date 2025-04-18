@@ -29,64 +29,33 @@
             <li class="nav_item">
                 <a href="?controller=contact&action=index" class="nav_link">Liên Hệ</a>
             </li>
-
-            <?php
-                if(!isUserLoggedIn()) {
-                    ?>
-                    <li class="nav_item">
-                        <a href="?controller=account&action=register" class="nav_link">Đăng Ký</a>
-                    </li>
-            <?php
-                }
-            ?>
-
-
+            <li class="nav_item">
+                <a href="?controller=account&action=register" class="nav_link">Đăng Ký</a>
+            </li>
         </ul>
         <div class="nav_items">
-            <form action="?controller=product&action=search" class="nav_form" method="GET">
-                <input type="hidden" name="controller" value="product">
-                <input type="hidden" name="action" value="search">
-                <input type="text" name="search_query" class="nav_input" placeholder="Tìm kiếm..." />
-                <button type="submit" class="nav_search_button" name="submit_search">
-                    <i class="material-icons">search</i> <!-- Bạn có thể sử dụng biểu tượng tìm kiếm hoặc văn bản -->
-                </button>
+            <form action="#" class="nav_form">
+                <input type="text" class="nav_input" placeholder="Tìm kiếm..." />
+                <img src="./assets/image/search.png" alt="" class="nav_search" />
             </form>
             <img src="./assets/image/heart.png" alt="" class="nav_heart" />
             <a href="?controller=cart&action=index">
                 <img src="./assets/image/cart.png" alt="" class="nav_cart" />
             </a>
-            <?php
-            // Giả sử hàm isUserLoggedIn() sẽ kiểm tra xem người dùng đã đăng nhập chưa
-            if (isUserLoggedIn()) {
-                ?>
-                <a href="?controller=home&action=user">
-                    <div class="nav_user">
-                        <img src="./assets/image/icons/avata1.png" alt="" class="nav_avatar" />
-                        <div class="dropdown-menu" id="dropdown-menu">
-                            <ul>
-                                <li><a href="?controller=home&action=user">Tài khoản của tôi</a></li>
-                                <li><a href="?controller=account&action=logout">Đăng xuất</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
-                <?php
-            }
-            ?>
         </div>
         <span class="hamburger">
           <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
           >
             <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
         </span>
@@ -110,13 +79,11 @@
             <a href="/cart.html" class="mobile_nav_link">Cart</a>
         </li>
     </ul>
-
 </nav>
-    <?= @$content ?>
+<?= @$content ?>
 
-    <!-- JavaScript Libraries -->
-    <script src="./assets/js/cart.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/main.js"></script>
+<!-- JavaScript Libraries -->
+<script src="./assets/js/cart.js"></script>
+<script src="./assets/js/app.js"></script>
 </body>
 </html>

@@ -1,44 +1,39 @@
-<?php if (!empty($message)): ?>
-    <script type="text/javascript">
-        alert("<?= showMessageRegister($message) ?>");
-    </script>
-<?php endif; ?>
 <section class="section">
     <div class="auth_container">
         <div class="auth_img">
             <img src="./assets/image/auth-image.jpg" alt="" class="auth_image" />
         </div>
         <div class="auth_content">
-            <form action="?controller=account&action=login" class="auth_form" method="post">
-                <h2 class="form_title">Đăng Nhập Tài Khoản</h2>
+            <form action="?controller=account&action=register" class="auth_form" method="POST">
+                <h2 class="form_title">Tạo Tài Khoản</h2>
                 <p class="auth_p"></p>
                 <div class="form_group">
-                    <input name="tk" type="text" placeholder="Username" class="form_input" />
+                    <input type="text" placeholder="Username" class="form_input" name="text_username" />
+                </div>
+                <div class="form_group">
+                    <input type="email" placeholder="Email" class="form_input" name="text_email" />
                 </div>
                 <div class="form_group form_pass">
                     <input
-                            type="password"
-                            placeholder="Mật Khẩu"
-                            name="mk"
-                            class="form_input"
+                        type="password"
+                        placeholder="Mật khẩu"
+                        class="form_input"
+                        name="text_password"
                     />
                 </div>
                 <div class="form_group">
-                    <input type="submit" name="btn_submit" class="form_btn" value="Đăng Nhập"/>
+                    <input type="submit" name="btn_submit" class="form_btn" value="ĐĂNG KÝ"/>
                 </div>
                 <div class="form_group">
               <span
-              >Bạn chưa có tài khoản?
-                <a href="?controller=account&action=register" class="form_auth_link"
-                >Đăng Ký</a
-                ></span
+              >Bạn đã có tài khoản?
+                <a href="http://localhost/index.php?controller=account&action=login" class="form_auth_link">Đăng Nhập</a></span
               >
                 </div>
             </form>
         </div>
     </div>
 </section>
-
 <footer class="footer">
     <div class="container footer_container">
         <div class="footer_item">
@@ -57,12 +52,17 @@
                 <li class="li footer_list_item">Chính Sách Bảo Hành & Bảo Trì</li>
             </ul>
         </div>
-    </div>
-    <div class="footer_bottom">
-        <div class="container footer_bottom_container">
-            <p class="footer_copy">
-                Copyright Casafine 2025. All right reserved
-            </p>
+        <div class="footer_bottom">
+            <div class="container footer_bottom_container">
+                <p class="footer_copy">
+                    Copyright Casafine 2025. All right reserved
+                </p>
+            </div>
         </div>
-    </div>
 </footer>
+
+<?php if (!empty($message)): ?>
+    <script type="text/javascript">
+        alert("<?= showMessageRegister($message) ?>");
+    </script>
+<?php endif; ?>
